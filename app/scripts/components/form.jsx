@@ -13,9 +13,9 @@ var HeaderComponent = React.createClass({
       url: $('#url').val(),
       description: $('#form-description').val()
     }
-  console.log(this.props.collection)
-   this.props.collection.get(formData);
-   this.props.collection.save(formData);
+  this.props.collection.create(formData);
+  //  this.props.collection.get(formData);
+  //  this.props.collection.save(formData);
    $('#url').val('');
    $('#form-description').val('');
    this.render();
@@ -25,9 +25,10 @@ var HeaderComponent = React.createClass({
   },
   render: function (){
     return <div>
+
           <div className="row header">
             <div className="col-md-12" id='header'></div>
-              <button onClick = {this.handleSlider} className="button"><div className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></div></button>
+            <div className="form-nav"><i onClick = {this.handleSlider} className="fa fa-plus-circle fa-2x"></i></div>
           </div>
 
           <form className = 'form-body'>

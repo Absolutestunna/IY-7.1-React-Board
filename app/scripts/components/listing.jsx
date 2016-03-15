@@ -7,32 +7,33 @@ require('backbone-react-component');
 var model = require('../models/model');
 
 var ImagesComponent = React.createClass({
+  mixins: [Backbone.React.Component.mixin],
   render: function(){
-    return <div>
-      <h1>This will work</h1>
-      <img src={this.props.model.get('url')}/>
+    return (<div>
       <div className="indPic">
+        <img src={this.props.model.get('url')} />
         <p className="pic-comments">{this.props.model.get('description')}</p>
       </div>
     </div>
+    )
   },
 
 });
 
-var indImg = React.createClass({
+var IndImg = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   render: function(){
-
     var eachItem = this.props.collection.map(function(model){
-     if (model.get('undefined') != ""){
+     if (model.get('url') != ""){
        return (
          <ImagesComponent
            model={model}
-           key={model.get('_id')}
+           key={model.id}
           />
        )
      }
-    });
+   }); //end of map
+
    return(
      <div className="row">
         {eachItem}
@@ -40,4 +41,7 @@ var indImg = React.createClass({
    )
   }
 });
-module.exports = ImagesComponent;
+module.exports = {
+  'ImagesComponent': ImagesComponent,
+  'IndImg': IndImg
+};

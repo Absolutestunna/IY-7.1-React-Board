@@ -12,9 +12,9 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
       url: $('#url').val(),
       description: $('#form-description').val()
     }
-  console.log(this.props.collection)
-   this.props.collection.get(formData);
-   this.props.collection.save(formData);
+  this.props.collection.create(formData);
+  //  this.props.collection.get(formData);
+  //  this.props.collection.save(formData);
    $('#url').val('');
    $('#form-description').val('');
    this.render();
@@ -24,9 +24,10 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
   },
   render: function (){
     return React.createElement("div", null, 
+
           React.createElement("div", {className: "row header"}, 
             React.createElement("div", {className: "col-md-12", id: "header"}), 
-              React.createElement("button", {onClick: this.handleSlider, className: "button"}, React.createElement("div", {className: "glyphicon glyphicon-exclamation-sign", "aria-hidden": "true"}))
+            React.createElement("div", {className: "form-nav"}, React.createElement("i", {onClick: this.handleSlider, className: "fa fa-plus-circle fa-2x"}))
           ), 
 
           React.createElement("form", {className: "form-body"}, 

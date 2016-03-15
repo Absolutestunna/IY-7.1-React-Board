@@ -18,12 +18,23 @@ body {
 }
 .header {
   height: 80px;
-  background-color: blue;
+  background-color: #6A95D0;
   width: 100%;
-  .button {
+
+  .form-nav {
+    display: inline-block;
+    width: 30px;
     height: 30px;
-    width: 50px;
+    margin-left: 120px;
+    margin-top: 26px;
+
   }
+ // i {
+ //   width: 30px;
+ //   height: 30px;
+ //   margin-left: 30px;
+ //   margin-top: 10px;
+ // }
 }
 .form-body {
   background-color: #FFF;
@@ -49,6 +60,7 @@ body {
     height: 30px;
     width: 70px;
     margin-right: 75px;
+    background-color: none;
   }
   .cancel {
     margin-right: 40px;
