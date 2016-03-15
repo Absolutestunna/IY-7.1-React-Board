@@ -5,13 +5,15 @@ var $ = require('jquery');
 
 var Model = require('./models/model');
 var FormComponent = require('./components/form.jsx');
-// var listComponent = require('./components/list.jsx');
+var ListComponent = require('./components/listing.jsx');
 
 
 var imageCollection = new Model.ImageCollection();
-ReactDOM.render(
-  <FormComponent collection={imageCollection} />,
-  document.getElementById('body')
-);
+imageCollection.fetch()
 
-// new Model.ImageCollection();
+ReactDOM.render(<div>
+              <FormComponent collection={imageCollection} />
+              </div>
+  , document.getElementById('body'));
+
+ReactDOM.render(<ListComponent collection={imageCollection}/>, document.getElementById('pics-container'));

@@ -4,13 +4,6 @@ var ReactDOM = require('react-dom');
 var $ = require('jquery');
 require('backbone-react-component');
 
-$.fn.serializeObject = function(){
-  return this.serializeArray().reduce(function(acum, i){
-    acum[i.name] = i.value;
-    return acum;
-  }, {});
-};
-
 
 var HeaderComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
@@ -20,17 +13,21 @@ var HeaderComponent = React.createClass({
       url: $('#url').val(),
       description: $('#form-description').val()
     }
+  console.log(this.props.collection)
    this.props.collection.get(formData);
    this.props.collection.save(formData);
+   $('#url').val('');
+   $('#form-description').val('');
+   this.render();
  },
-  handleClick: function(){
+  handleSlider: function(){
     $(".form-body").slideToggle(500);
   },
   render: function (){
     return <div>
           <div className="row header">
             <div className="col-md-12" id='header'></div>
-              <button onClick = {this.handleClick} className="button"><div className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></div></button>
+              <button onClick = {this.handleSlider} className="button"><div className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></div></button>
           </div>
 
           <form className = 'form-body'>
@@ -45,7 +42,5 @@ var HeaderComponent = React.createClass({
           </form>
       </div>
   },
-
 });
-
 module.exports = HeaderComponent;

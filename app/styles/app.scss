@@ -10,7 +10,8 @@ img {
   max-width: 100%;
 }
 body {
-  background-color: gray;
+  background-color:  #f2f2f2;
+
 }
 #body {
   width: 100%;
@@ -52,5 +53,21 @@ body {
   .cancel {
     margin-right: 40px;
   }
-
+}
+#pics-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #d9d9d9;
+  .indPic {
+    width: 80%;
+    background-color: #FFF;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 500px;
+    }
+    p {
+      text-align: center;
+    }
+  }
 }

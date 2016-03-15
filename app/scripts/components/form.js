@@ -3,13 +3,6 @@ var ReactDOM = require('react-dom');
 var $ = require('jquery');
 require('backbone-react-component');
 
-$.fn.serializeObject = function(){
-  return this.serializeArray().reduce(function(acum, i){
-    acum[i.name] = i.value;
-    return acum;
-  }, {});
-};
-
 
 var HeaderComponent = React.createClass({displayName: "HeaderComponent",
   mixins: [Backbone.React.Component.mixin],
@@ -19,17 +12,21 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
       url: $('#url').val(),
       description: $('#form-description').val()
     }
+  console.log(this.props.collection)
    this.props.collection.get(formData);
    this.props.collection.save(formData);
+   $('#url').val('');
+   $('#form-description').val('');
+   this.render();
  },
-  handleClick: function(){
+  handleSlider: function(){
     $(".form-body").slideToggle(500);
   },
   render: function (){
     return React.createElement("div", null, 
           React.createElement("div", {className: "row header"}, 
             React.createElement("div", {className: "col-md-12", id: "header"}), 
-              React.createElement("button", {onClick: this.handleClick, className: "button"}, React.createElement("div", {className: "glyphicon glyphicon-exclamation-sign", "aria-hidden": "true"}))
+              React.createElement("button", {onClick: this.handleSlider, className: "button"}, React.createElement("div", {className: "glyphicon glyphicon-exclamation-sign", "aria-hidden": "true"}))
           ), 
 
           React.createElement("form", {className: "form-body"}, 
@@ -44,7 +41,5 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
           )
       )
   },
-
 });
-
 module.exports = HeaderComponent;
