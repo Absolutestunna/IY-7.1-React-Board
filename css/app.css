@@ -1,3 +1,25 @@
-*,*::before,*::after{box-sizing:border-box}img{max-width:100%}
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%; }
+
+.header {
+  height: 80px;
+  background-color: blue;
+  width: 100%; }
+  .header .button {
+    height: 30px;
+    width: 50px; }
+
+.form-body {
+  background-color: #FFF;
+  width: 100%; }
+  .form-body .form-group {
+    width: 100%; }
+    .form-body .form-group input {
+      width: 90%; }
 
 /*# sourceMappingURL=app.css.map */
