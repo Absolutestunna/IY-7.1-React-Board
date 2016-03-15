@@ -12,19 +12,19 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
       url: $('#url').val(),
       description: $('#form-description').val()
     }
-  this.props.collection.create(formData);
-  //  this.props.collection.get(formData);
-  //  this.props.collection.save(formData);
-   $('#url').val('');
-   $('#form-description').val('');
-   this.render();
+    this.props.collection.create(formData);
+    //  this.props.collection.get(formData);
+    //  this.props.collection.save(formData);
+    $('#url').val('');
+    $('#form-description').val('');
+    this.render();
  },
   handleSlider: function(){
     $(".form-body").slideToggle(500);
   },
   render: function (){
-    return React.createElement("div", null, 
-
+    return (
+      React.createElement("div", null, 
           React.createElement("div", {className: "row header"}, 
             React.createElement("div", {className: "col-md-12", id: "header"}), 
             React.createElement("div", {className: "form-nav"}, React.createElement("i", {onClick: this.handleSlider, className: "fa fa-plus-circle fa-2x"}))
@@ -41,6 +41,7 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
               React.createElement("button", {onClick: this.clickEvent, type: "button", className: "cancel btn btn-default"}, "Cancel")
           )
       )
+    );
   },
 });
 module.exports = HeaderComponent;

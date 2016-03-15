@@ -1,8 +1,7 @@
 var Backbone = require('backbone');
 
 var ImageModel = Backbone.Model.extend({
-
-
+  idAttribute: "_id"
 });
 
 var ImageCollection = Backbone.Collection.extend({

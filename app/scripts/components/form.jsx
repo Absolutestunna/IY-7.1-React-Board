@@ -13,25 +13,25 @@ var HeaderComponent = React.createClass({
       url: $('#url').val(),
       description: $('#form-description').val()
     }
-  this.props.collection.create(formData);
-  //  this.props.collection.get(formData);
-  //  this.props.collection.save(formData);
-   $('#url').val('');
-   $('#form-description').val('');
-   this.render();
+    this.props.collection.create(formData);
+    //  this.props.collection.get(formData);
+    //  this.props.collection.save(formData);
+    $('#url').val('');
+    $('#form-description').val('');
+    this.render();
  },
   handleSlider: function(){
     $(".form-body").slideToggle(500);
   },
   render: function (){
-    return <div>
-
+    return (
+      <div>
           <div className="row header">
-            <div className="col-md-12" id='header'></div>
+            <div className="col-md-12" id="header"></div>
             <div className="form-nav"><i onClick = {this.handleSlider} className="fa fa-plus-circle fa-2x"></i></div>
           </div>
 
-          <form className = 'form-body'>
+          <form className='form-body'>
               <div className="form-group">
                 <input type="email" name="url" className="form-control" id="url"/>
               </div>
@@ -42,6 +42,7 @@ var HeaderComponent = React.createClass({
               <button onClick={this.clickEvent} type="button" className='cancel btn btn-default'>Cancel</button>
           </form>
       </div>
+    );
   },
 });
 module.exports = HeaderComponent;
