@@ -6,20 +6,59 @@
 img {
   max-width: 100%; }
 
+body {
+  background-color: #f2f2f2; }
+
+#body {
+  width: 100%; }
+
 .header {
   height: 80px;
-  background-color: blue;
+  background-color: #6A95D0;
   width: 100%; }
-  .header .button {
+  .header .form-nav {
+    display: inline-block;
+    width: 30px;
     height: 30px;
-    width: 50px; }
+    margin-left: 120px;
+    margin-top: 26px; }
 
 .form-body {
   background-color: #FFF;
-  width: 100%; }
+  width: 100%;
+  height: 250px; }
   .form-body .form-group {
     width: 100%; }
     .form-body .form-group input {
-      width: 90%; }
+      width: 90%;
+      margin-left: 50px;
+      margin-top: 30px;
+      height: 40px; }
+    .form-body .form-group textarea {
+      width: 90%;
+      margin-left: 50px;
+      margin-top: 30px;
+      margin-bottom: 20px; }
+  .form-body button {
+    float: right;
+    height: 30px;
+    width: 70px;
+    margin-right: 75px;
+    background-color: none; }
+  .form-body .cancel {
+    margin-right: 40px; }
 
+#pics-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #d9d9d9; }
+  #pics-container .indPic {
+    width: 80%;
+    background-color: #FFF;
+    margin: 0 auto; }
+    #pics-container .indPic img {
+      width: 100%;
+      height: 500px; }
+    #pics-container .indPic p {
+      text-align: center; }
 /*# sourceMappingURL=app.css.map */
