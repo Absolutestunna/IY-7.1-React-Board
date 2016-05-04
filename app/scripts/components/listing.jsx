@@ -29,7 +29,7 @@ var IndImg = React.createClass({
          <ImagesComponent
            model={model}
            key={model.id}
-          />
+           />
        )
      }
    }); //end of map

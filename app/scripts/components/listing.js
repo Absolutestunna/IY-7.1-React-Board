@@ -28,7 +28,7 @@ var IndImg = React.createClass({displayName: "IndImg",
          React.createElement(ImagesComponent, {
            model: model, 
            key: model.id}
-          )
+           )
        )
      }
    }); //end of map

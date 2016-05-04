@@ -16,12 +16,6 @@ var imageModel = new Model.ImageModel();
 var imageCollection = new Model.ImageCollection();
 imageCollection.fetch();
 
-
-ReactDOM.render(
-  React.createElement(FormComponent, {collection: imageCollection})
-  , document.getElementById('form-space')
-);
-
 ReactDOM.render(
   React.createElement(IndividualImageComponent, {collection: imageCollection})
   , document.getElementById('pics-container')
